@@ -5,4 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: 'app/facebook-login.component.html'
 })
 
-export class FacebookLoginComponent { }
+export class FacebookLoginComponent {
+  app_id: string;
+  redirect_uri: string;
+  loginUrl: string;
+  constructor(){
+    this.app_id = "592108690966233";
+    this.redirect_uri = "http://192.168.1.82:8080/secrets/login";
+
+    this.loginUrl = "https://www.facebook.com/dialog/oauth?" +
+               "client_id=" + this.app_id + "&" + 
+               "redirect_uri=" + encodeURIComponent(this.redirect_uri) + "&" +
+               "scope=pages_show_list";
+  }
+}
