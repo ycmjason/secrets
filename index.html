@@ -1,8 +1,10 @@
 <html>
   <head>
+    <base href="/">
     <title>Angular 2 QuickStart JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css" media="screen,projection"/>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- 1. Load libraries -->
     <!-- IE required polyfill -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -25,23 +27,8 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '592108690966233',
-          xfbml      : true,
-          version    : 'v2.6'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
     <my-app>Loading...</my-app>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
   </body>
 </html>
