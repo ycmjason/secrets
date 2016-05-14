@@ -11,7 +11,7 @@ export class FacebookLoginComponent {
   loginUrl: string;
   constructor(){
     this.app_id = "592108690966233";
-    this.redirect_uri = "http://192.168.1.82:8080/secrets/login";
+    this.redirect_uri = "http://192.168.1.82:8080/secret-page/login";
 
     this.loginUrl = "https://www.facebook.com/dialog/oauth?" +
                "client_id=" + this.app_id + "&" + 
