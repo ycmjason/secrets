@@ -14,12 +14,34 @@
     <script src="node_modules/@angular/compiler/compiler.umd.js"></script>
     <script src="node_modules/@angular/platform-browser/platform-browser.umd.js"></script>
     <script src="node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
     <!-- 2. Load our 'modules' -->
-    <script src='app/app.component.js'></script>
-    <script src='app/main.js'></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+    
   </head>
   <!-- 3. Display the application -->
   <body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '592108690966233',
+          xfbml      : true,
+          version    : 'v2.6'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <my-app>Loading...</my-app>
   </body>
 </html>
