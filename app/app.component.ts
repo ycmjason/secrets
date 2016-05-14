@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { Component, OnInit, provide } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+import { Routes, Router, ROUTER_DIRECTIVES , ROUTER_PROVIDERS} from '@angular/router';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 import {LoginComponent} from './login.component';
 import {FacebookLoginRedirectComponent} from './facebook-login-redirect.component'
 import {SelectFacebookPageComponent} from './select-facebook-page.component'
+import {DashboardComponent} from './dashboard.component'
 
-import {UserService} from './user.service';
+import { UserService } from './user.service';
 import { CookieService } from './cookie.service';
 
 @Component({
@@ -13,6 +16,9 @@ import { CookieService } from './cookie.service';
   templateUrl: 'app/app.component.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [UserService,
+              ROUTER_PROVIDERS,
+              provide(LocationStrategy, {useClass: HashLocationStrategy}),
+              HTTP_PROVIDERS,
               CookieService]
 })
 
@@ -28,6 +34,10 @@ import { CookieService } from './cookie.service';
   {
     path: '/select-facebook-page',
     component: SelectFacebookPageComponent
+  },
+  {
+    path: '/dashboard/:id',
+    component: DashboardComponent
   }
 ])
 

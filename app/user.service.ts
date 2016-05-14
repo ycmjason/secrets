@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 import { User } from './User';
 import { Page } from './Page';
 
-const api_host = "http://192.168.1.82:8080";
+const api_host = "http://localhost:8080";
 @Injectable()
 export class UserService {
 
