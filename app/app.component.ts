@@ -1,5 +1,4 @@
-import { Component, OnInit, provide } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+import { Component, OnInit } from '@angular/core';
 import { Routes, Router, ROUTER_DIRECTIVES , ROUTER_PROVIDERS} from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 
@@ -17,7 +16,6 @@ import { CookieService } from './cookie.service';
   directives: [ROUTER_DIRECTIVES],
   providers: [UserService,
               ROUTER_PROVIDERS,
-              provide(LocationStrategy, {useClass: HashLocationStrategy}),
               HTTP_PROVIDERS,
               CookieService]
 })
